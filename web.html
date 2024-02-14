@@ -1,0 +1,578 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Homepage</title>
+  <style>
+    /* Existing CSS styles */
+
+    /* Media query for small screens */
+    @media only screen and (max-width: 768px) {
+      /* Adjustments for small screens */
+      .elementor-col-7,
+      .elementor-col-5 {
+        width: 100%;
+      }
+      .elementor-col-5 {
+        margin-top: 20px; /* Add some space between the sections */
+      }
+    }
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+    header {
+      background-color: #d259fa;
+      color: #fff;
+      padding: 10px;
+    }
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .logo {
+      display: flex;
+      align-items: center;
+    }
+    .logo img {
+      height: 40px;
+      margin-right: 10px;
+    }
+    .search-bar {
+      flex-grow: 1;
+      margin: 0 20px;
+    }
+    .nav-items ul {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+    }
+    .nav-items ul li {
+      margin-right: 50px;
+      position: relative;
+    }
+    .nav-items ul li:last-child {
+      margin-right: 0;
+    }
+    .nav-items ul li a {
+      color: #fff;
+      text-decoration: none;
+    }
+    .nav-items ul li a:hover {
+      color: #f0f0f0;
+    }
+    .nav-items ul li ul {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      background-color: #007bff;
+      padding: 10px;
+      border-radius: 5px;
+    }
+    .nav-items ul li:hover ul {
+      display: block;
+    }
+    .nav-items ul li ul li {
+      margin: 5px 0;
+    }
+    .nav-items ul li ul li a {
+      color: #fff;
+    }
+    .nav-items ul li ul li a:hover {
+      color: #f0f0f0;
+    }
+    .cart-icon {
+      font-size: 20px;
+      margin-right: 20px;
+    }
+    .sign-in {
+      font-size: 16px;
+      color: #fff;
+      text-decoration: none;
+      margin-right: 20px;
+    }
+    .content {
+      display: flex;
+      justify-content: space-between;
+    }
+    .left-side img {
+      max-width: 100%;
+      height: auto;
+    }
+    .right-side {
+      width: 300px;
+      background-color: #f0f0f0;
+      padding: 20px;
+      box-sizing: border-box;
+    }
+    .right-side h2 {
+      margin-bottom: 20px;
+      text-align: center;
+    }
+    .right-side p {
+      margin: 10px 0;
+    }
+    /* Additional styles for the sign-in form */
+    .col {
+      display: flex;
+      flex-direction: column;
+    }
+    .hide-md-lg {
+      display: none;
+    }
+    input[type="text"],
+    input[type="password"],
+    input[type="submit"] {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+    input[type="submit"] {
+      background-color: #007bff;
+      color: #fff;
+      cursor: pointer;
+    }
+    input[type="submit"]:hover {
+      background-color: #0056b3;
+    }
+
+    .col {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .social-login a:hover {
+      opacity: 0.9;
+    }
+
+    /* Colors for each social login */
+    .google {
+      background-color: orange;
+    }
+
+    .facebook {
+      background-color: #408ff7; /* Facebook blue color */
+    }
+
+    .twitter {
+      background-color: #1fc94c; /* Twitter sky blue color */
+    }
+
+    .social-login a:hover {
+      opacity: 0.9;
+    }
+
+    .elementor-element-0f3ce50 img {
+      max-width: 100%;
+      height: auto;
+    }
+
+    .logo_home img {
+      max-width: 100%;
+      height: auto;
+    }
+
+
+
+    .service-item {
+      border: 1px solid black; /* Initial border */
+      transition: border-color 0.3s ease; /* Smooth transition for border color change */
+      margin-bottom: 20px; /* Add margin between service items */
+      border-radius: 5px; /* Add border radius for rounded corners */
+    }
+
+    /* Service item hover effect */
+    .service-item:hover {
+      border-color: #007bff; /* Change border color on hover */
+    }
+
+    /* Text color */
+    .service-item-info h2,
+    .service-item-info p {
+      color: #333; /* Initial text color */
+      transition: color 0.3s ease; /* Smooth transition for text color change */
+    }
+
+    /* Text color on hover */
+    .service-item:hover .service-item-info h2,
+    .service-item:hover .service-item-info p {
+      color: #fff; /* Change text color to white on hover */
+    }
+    
+    /* Service item background colors */
+    .people .service-item-info {
+      background-color: transparent; /* Initial background color */
+      transition: background-color 0.3s ease; /* Smooth transition for background color change */
+    }
+
+    .people:hover .service-item-info {
+      background-color: purple; /* Purple background for People on hover */
+      border-color: purple; /* Purple border color for People on hover */
+    }
+
+    .people .service-item-info h2,
+    .people .service-item-info p {
+      color: purple; /* Purple text color for People */
+    }
+
+    .places .service-item-info {
+      background-color: transparent; /* Initial background color */
+      transition: background-color 0.3s ease; /* Smooth transition for background color change */
+    }
+
+    .places:hover .service-item-info {
+      background-color: green; /* Green background for Places on hover */
+      border-color: green; /* Green border color for Places on hover */
+    }
+
+    .places .service-item-info h2,
+    .places .service-item-info p {
+      color: green; /* Green text color for Places */
+    }
+
+    .products .service-item-info {
+      background-color: transparent; /* Initial background color */
+      transition: background-color 0.3s ease; /* Smooth transition for background color change */
+    }
+
+    .products:hover .service-item-info {
+      background-color: blue; /* Blue background for Products on hover */
+      border-color: Blue; /* Blue border color for Products on hover */
+    }
+
+    .products .service-item-info h2,
+    .products .service-item-info p {
+      color: blue; /* Blue text color for Products */
+    }
+
+    .programs .service-item-info {
+      background-color: transparent; /* Initial background color */
+      transition: background-color 0.3s ease; /* Smooth transition for background color change */
+    }
+
+    .programs:hover .service-item-info {
+      background-color: orange; /* Orange background for Programs on hover */
+      border-color: orange; /* Orange border color for Programs on hover */
+    }
+
+    .programs .service-item-info h2,
+    .programs .service-item-info p {
+      color: orange; /* Orange text color for Programs */
+    }
+
+
+
+
+
+    .center-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh; /* Set container height to full viewport height */
+    }
+
+    /* Image styles */
+    img {
+      max-width: 100%; /* Ensure image does not exceed container width */
+      max-height: 100%; /* Ensure image does not exceed container height */
+    }
+
+
+
+  </style>
+</head>
+<body>
+  <script src="https://apis.google.com/js/api.js?onload=handleClientLoad" async defer></script>
+  <header>
+    <div class="container">
+      <nav>
+        <div class="logo">
+          <img src="HobbyCue Logo v2 1.png" alt="Logo">
+          <div class="search-bar">
+            <input type="text" placeholder="Search...">
+          </div>
+        </div>
+        <div class="nav-items">
+          <ul>
+            <li>
+              <a href="#">Home</a>
+            </li>
+            <li>
+                <a href="#">
+                    <img src="Group 4.png" alt="Explore">
+                  </a>
+                  
+              <ul>
+                <li><a href="people.html">People</a></li>
+                <li><a href="#">Place</a></li>
+                <li><a href="#">Product</a></li>
+                <li><a href="#">Program</a></li>
+              </ul>
+            </li>
+            <a href="#">
+                <img src="Group 5.png" alt="Explore">
+              </a>
+           
+          </ul>
+          <a href="#" class="cart-icon">&#128722;</a>
+          <br>
+          <a href="test.html" class="sign-in">AboutUs</a>
+          <a href="contact.html" class="sign-in">idea</a>
+          <a href="index.html" class="sign-in">Sign In</a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <div class="container">
+      <div class="content">
+        <!-- Left side with picture -->
+        <div class="left-side">
+            <img src="Explore your hobby or passion.png" alt="Side Image">
+            <img src="Sign-in to interact with a community of fellow hobbyists and an eco-system of experts, teachers, suppliers, classes, workshops, and places to practice, participate or perform. Your hobby may be about visual or perfo.png" alt="Side Image">
+            <img src="If you are an expert or a seller, you can Add your Listing and promote yourself, your students, products, services or events. Hop on your hobbyhorse and enjoy the ride..png" alt="Side Image">
+            <img src="5793404 1.png" alt="Side Image" style="max-width: 160px; max-height: 100px;">
+            <img src="5793401 1.png" alt="Side Image" style="max-width: 160px; max-height: 100px;">
+          </div>
+
+        <div class="container">
+
+        
+        <!-- Right side with operations -->
+        <div class="right-side" id="rightSide">
+          
+            <form action="/action_page.php">
+              <div class="row">
+                <h2 style="text-align:center">Login with Social Media or Manually</h2>
+                <div class="vl">
+                  <span class="vl-innertext">or</span>
+                </div>
+                <div class="col">
+                  <a href="#" class="facebook btn">
+                    <i class="fa fa-facebook fa-fw"></i> Login with Facebook
+                  </a>
+                  <a href="#" class="twitter btn">
+                    <i class="fa fa-twitter fa-fw"></i> Login with Twitter
+                  </a>
+                  <a href="#" class="google btn">
+                    <i class="fa fa-google fa-fw"></i> Login with Google+
+                  </a>
+                </div>
+                <div class="col">
+                  <div class="hide-md-lg">
+                    <p>Or sign in manually:</p>
+                  </div>
+                  <input type="text" name="username" placeholder="Username" required>
+                  <input type="password" name="password" placeholder="Password" required>
+                  <input type="submit" value="Login">
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="container">
+    <div class="left-side">
+        <div>
+          <img src="Frame 125.png" alt="people" onclick="changeImage(this)">
+          <img src="Frame 132.png" alt="people" onclick="changeImage(this)">
+        </div>
+        <div>
+          <img src="Frame 1153.png" alt="people" onclick="changeImage(this)">
+          <img src="Frame 134.png" alt="people" onclick="changeImage(this)">
+        </div>
+      </div>
+    </div>
+
+
+
+    <section class="i-section services">
+        <div class="container-fluid">
+          <div class="row section-body">
+            <div class="col-md-6 col-sm-6">
+              <div class="service-item people" style="width: 100%;">
+                <div class="service-item-icon">
+                  <span class="material-icons person_outline"></span>
+                </div>
+                <div class="service-item-info">
+                  <h2>People</h2>
+                  <p>Find a teacher, coach, or expert for your hobby interest in your locality. Find a partner, teammate, accompanist or collaborator ...</p>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6 col-sm-6">
+              <div class="service-item places" style="width: 100%;">
+                <div class="service-item-icon">
+                  <span class="icon-location-pin-add-2"></span>
+                </div>
+                <div class="service-item-info">
+                  <h2>Places</h2>
+                  <p>Find a class, school, playground, auditorium, studio, shop or an event venue. Book a slot at venues that allow booking through hobbycue.</p>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6 col-sm-6">
+              <div class="service-item products" style="width: 100%;">
+                <div class="service-item-icon">
+                  <span class="icon-shopping-basket-2"></span>
+                </div>
+                <div class="service-item-info">
+                  <h2>Products</h2>
+                  <p>Find equipment or supplies required for your hobby. Buy, rent or borrow from shops, online stores or from community members.</p>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6 col-sm-6">
+              <div class="service-item programs" style="width: 100%;">
+                <div class="service-item-icon">
+                  <span class="fa fa-calendar-check-o"></span>
+                </div>
+                <div class="service-item-info">
+                  <h2>Programs</h2>
+                  <p>Find events, meetups and workshops related to your hobby. Register or buy tickets online.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      
+ 
+ <div class="center-container" >
+    <img src="Frame 1102.png" alt="dance"  style="width: 50%; height: 100%;" >
+   
+</div>
+<div class="center-container" >
+  
+  <img src="Frame 1098.png" alt="Add"  style="width: 50%; height: 100%;">
+</div>
+
+
+
+
+<div class="w3-half">
+  <img src="https://hobbycue.com/wp-content/uploads/2018/07/istock-mujer-con-audc3adfonos.jpg" style="width:100%" onclick="onClick(this)" alt="Concrete meets bricks">
+  <img src="https://hobbycue.com/wp-content/uploads/2018/07/20171224_200116-scaled.jpg" style="width:100%" onclick="onClick(this)" alt="Light, white and tight scandinavian design">
+  <img src="https://hobbycue.com/wp-content/uploads/2018/07/IMG-20180204-WA0005.jpg" style="width:100%" onclick="onClick(this)" alt="White walls with designer chairs">
+</div>
+
+
+  </main>
+
+  <section class="elementor-section elementor-top-section elementor-element elementor-element-b72575c elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="b72575c" data-element_type="section">
+    <div class="elementor-container elementor-column-gap-default">
+        <div class="elementor-column elementor-col-7 elementor-top-column elementor-element elementor-element-3ffbfce" data-id="3ffbfce" data-element_type="column">
+            <div class="elementor-widget-wrap elementor-element-populated">
+                <div class="elementor-element elementor-element-0f3ce50 elementor-widget elementor-widget-image" data-id="0f3ce50" data-element_type="widget" data-widget_type="image.default">
+                    <div class="elementor-widget-container">
+                        <img fetchpriority="high" decoding="async" width="1024" height="249" src="https://hobbycue.com/wp-content/uploads/2022/09/Footer-Hobby.6204f4c9-1024x249.png" class="attachment-large size-large wp-image-20517" alt="" srcset="https://hobbycue.com/wp-content/uploads/2022/09/Footer-Hobby.6204f4c9-1024x249.png 1024w, https://hobbycue.com/wp-content/uploads/2022/09/Footer-Hobby.6204f4c9-300x73.png 300w, https://hobbycue.com/wp-content/uploads/2022/09/Footer-Hobby.6204f4c9-768x187.png 768w, https://hobbycue.com/wp-content/uploads/2022/09/Footer-Hobby.6204f4c9-600x146.png 600w, https://hobbycue.com/wp-content/uploads/2022/09/Footer-Hobby.6204f4c9.png 1240w" sizes="(max-width: 1024px) 100vw, 1024px"/>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="elementor-column elementor-col-5" id="hobbycue_home">
+            <div id="hobbycue_signin_wrapper">
+                <div class="logo_home">
+                    <img src="https://hobbycue.com/wp-content/uploads/2018/07/HobbyCue-Logo-Banner-ML.png" alt="Hobbycue" class="img-responsive"/>
+                </div>
+            </div>
+        </div>
+    </div>
+  </section>
+
+
+
+  <footer class="footer">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-4 col-sm-6 col-xs-12 c_widget woocommerce" style="display: inline-block;">
+          <div class="c_widget_title"><h5>hobbycue</h5></div>
+          <div class="textwidget">
+            <ul>
+              <li><a href="test.html">About Us</a></li>
+              <li><a href="people.html">Blog</a></li>
+              <li><a href="http://hobbycue.com/work">Work with Us</a></li>
+              <li><a href="http://hobbycue.com/faq">FAQ</a></li>
+              <li><a href="contact.html">Contact Us</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-md-4 col-sm-6 col-xs-12 c_widget woocommerce" style="display: inline-block;">
+          <div class="c_widget_title"><h5>How Do I</h5></div>
+          <div class="textwidget">
+            <ul>
+              <li><a href="http://hobbycue.com/how-to/" data-toggle="modal">Sign Up</a></li>
+              <li><a href="http://hobbycue.com/how-to/#add-listing">Add a Listing</a></li>
+              <li><a href="http://hobbycue.com/how-to/#claim-listing">Claim Listing</a></li>
+              <li><a href="http://hobbycue.com/how-to/#post-query">Post a Query</a></li>
+              <li><a href="http://hobbycue.com/how-to/#blog-post">Add a Blog Post</a></li>
+              <li><a href="http://hobbycue.com/how-to/">Other Queries</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-md-4 col-sm-6 col-xs-12 c_widget woocommerce" style="display: inline-block;">
+          <div class="c_widget_title"><h5>Quick Links</h5></div>
+          <div class="textwidget">
+            <ul>
+              <li><a href="http://hobbycue.com/explore">Listings</a></li>
+              <li><a href="http://hobbycue.com/blog">Blog Posts</a></li>
+              <li><a href="http://hobbycue.com/shop">Shop / Store</a></li>
+              <li><a href="http://hobbycue.com/activity">Community</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+  
+  
+
+
+
+  <script>
+    // Check if there's content in the right side
+    window.addEventListener('load', function() {
+      const rightSide = document.getElementById('rightSide');
+      const rightSideContent = rightSide.innerHTML.trim();
+
+      // If there's no content, hide the right side
+      if (!rightSideContent) {
+        rightSide.style.display = 'none';
+      }
+    });
+
+    const images = {
+    "Frame 125.png": "Frame 125 (1).png",
+    'Frame 132.png': 'Frame 132 (1).png',
+    'Frame 1153.png': 'Frame 133 (1).png',
+    'Frame 134.png': 'Frame 134 (1).png'
+  };
+
+  function changeImage(img) {
+    const currentSrc = img.src.split('/').pop(); // Get the current image filename
+    const newSrc = images[currentSrc]; // Get the corresponding new image filename
+    if (newSrc) {
+      img.src = newSrc; // Set the new image source if it exists in the mapping
+    }
+  }
+
+
+
+  </script>
+</body>
+</html>

@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+.parallax {
+    height: 100vh;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.parallax1 {
+    background-image: url('https://hobbycue.com/wp-content/uploads/2018/10/Kala-Rasika-Team-Cover-1024x429.jpeg');
+    background-color: yellow;
+}
+
+.parallax2 {
+    background-image: url('https://hobbycue.com/wp-content/uploads/2018/07/6ed94315e62f7b9e2ddd5f0eeec58087.jpg');
+    background-color: #D8BFD8;
+}
+
+.parallax-content {
+    padding: 20px;
+    text-align: center;
+    color: #000; /* Adjust text color */
+}
+
+.button-strip {
+    background-color: #000;
+    display: flex;
+    justify-content: center;
+    padding: 10px 0;
+}
+
+.button-strip button {
+    margin: 5px;
+    border: 2px solid #fff;
+    background-color: transparent;
+    color: #fff;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.button-strip button:hover {
+    background-color: #fff;
+    color: #000;
+}
+
+@media only screen and (max-width: 768px) {
+    .button-strip {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .parallax-content {
+        font-size: 18px;
+    }
+}
+
+@media only screen and (max-width: 576px) {
+    .parallax-content {
+        font-size: 16px;
+    }
+}
+</style>
+</head>
+<body>
+
+<div class="button-strip">
+    <button onclick="openWebpage('index.html')">Signin</button>
+    <button onclick="openWebpage('web.html')">Home</button>
+    <button onclick="openWebpage('contact.html')">Idea/Chat</button>
+    <button onclick="openWebpage('people.html')">About</button>
+    <button onclick="openWebpage('idea.html')">Ideas</button>
+</div>
+
+<div class="parallax parallax1">
+  <div class="parallax-content" style="color: white;">
+      <h2>Kala Rasika Initiative</h2>
+      <p>Kala Rasika is an initiative by classical violinist cum vocalist Vidushi Kalpana Kishore along with Odissi dancer Shrimati Shubha Nagarajan...</p>
+  </div>
+</div>
+
+
+<div class="parallax-content">
+    <h2>Kala Rasika Initiative</h2>
+    <p>Kala Rasika is an initiative by classical violinist cum vocalist Vidushi Kalpana Kishore along with Odissi dancer Shrimati Shubha Nagarajan...</p>
+</div>
+
+<div class="parallax parallax2">
+    <div class="parallax-content" style="color: white;">
+        <h2>History of Chess</h2>
+        <p>The origin of the game of chess is credited to India where chess was derived from the game of ‘chaturanga’ before the 7th century...</p>
+    </div>
+</div>
+
+<div class="parallax-content">
+    <h2>History of Chess</h2>
+    <p>The origin of the game of chess is credited to India where chess was derived from the game of ‘chaturanga’ before the 7th century...</p>
+</div>
+
+<script>
+function openWebpage(url) {
+    window.location.href = url;
+}
+</script>
+</body>
+</html>
